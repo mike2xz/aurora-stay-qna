@@ -16,7 +16,7 @@ def retrieve(query: str, k: int = 2,vectorstore=None) -> list[str]:
 def generate(query, retrieved_chunks,model) -> str:
 
     prompt = f"""
-    You are an AI assistant helping AuroraStay Hotels staff answer questions about hotel policies, bookings, cancellations, refunds, room information, charges and guest guidelines.
+    You are an AI assistant answering questions for AuroraStay Hotels staff about hotel policies, bookings, refunds, room information and guest guidelines.
 
     User Query:
     {query}
@@ -33,7 +33,7 @@ def generate(query, retrieved_chunks,model) -> str:
     6. Do not include unrelated information from the retrieved policy information.
     7. Answer the user's specific question directly and ensure the response addresses what was asked.
     8. Keep the answer concise, clear, and easy to understand.
-    9. Do not invent fees, deadlines, room details, property-specific amounts, policy conditions, or exceptions.
+    9. Do not invent fees, deadlines, room details, policy conditions, or exceptions.
     10. If the information is insufficient, say:
         "The available policy documents do not contain enough information to answer this question."
         If the retrieved information conflicts, clearly mention the conflict.
